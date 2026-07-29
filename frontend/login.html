@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IDCTS — Sign In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+<div class="auth-shell">
+
+  <!-- Signature panel: a fanned stack of case-file tabs, transitioning from
+       paper registry to a single digital tracking ID. This is the visual thesis
+       of the product: many loose files, becoming one traceable case. -->
+  <aside class="auth-signature">
+    <div class="sig-content">
+      <div class="sig-eyebrow">Kenya Revenue Authority</div>
+      <h1 class="sig-title">Internal Document &amp;<br>Case Tracking System</h1>
+      <p class="sig-sub">Every file. Every officer. Every action, logged.</p>
+    </div>
+
+    <div class="file-stack" aria-hidden="true">
+      <div class="file-tab file-tab--1"><span>REGISTRY</span></div>
+      <div class="file-tab file-tab--2"><span>AUDIT</span></div>
+      <div class="file-tab file-tab--3"><span>INVESTIGATIONS</span></div>
+      <div class="file-tab file-tab--4"><span>LEGAL &amp; OBJECTIONS</span></div>
+      <div class="file-tab file-tab--5 file-tab--active">
+        <span class="stamp-inline">KRA-2026-000042</span>
+      </div>
+    </div>
+
+    <div class="sig-footer">Case Number · Status · Location · History — one record.</div>
+  </aside>
+
+  <!-- Login form -->
+  <main class="auth-form-panel">
+    <div class="auth-form-wrap">
+      <div class="form-mark">IDCTS</div>
+      <h2 class="form-heading">Sign in</h2>
+      <p class="form-subheading">Use your KRA staff or taxpayer account.</p>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" autocomplete="username" required />
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" required />
+        </div>
+
+        <div id="login-error" class="form-error" hidden></div>
+
+        <button type="submit" class="btn btn--primary" id="login-submit" style="width:100%; justify-content:center; padding:11px;">
+          Sign in
+        </button>
+      </form>
+
+      <div class="form-divider"><span>New here</span></div>
+
+      <button class="btn btn--ghost" id="show-register" style="width:100%; justify-content:center;">
+        Create an account
+      </button>
+
+      <!-- Registration (collapsed by default) -->
+      <form id="register-form" hidden novalidate>
+        <div class="field">
+          <label for="reg-name">Full name</label>
+          <input type="text" id="reg-name" required />
+        </div>
+        <div class="field">
+          <label for="reg-email">Email address</label>
+          <input type="email" id="reg-email" required />
+        </div>
+        <div class="field">
+          <label for="reg-password">Password</label>
+          <input type="password" id="reg-password" required minlength="6" />
+        </div>
+        <div class="field">
+          <label for="reg-role">Role</label>
+          <select id="reg-role" required>
+            <option value="">Select a role</option>
+            <option value="kra_officer">KRA Officer (Investigator)</option>
+            <option value="investigations_dept">Investigations Department</option>
+            <option value="registry_dept">Registry Department</option>
+            <option value="commissioner">Commissioner</option>
+            <option value="taxpayer">Taxpayer</option>
+          </select>
+        </div>
+        <div class="field" id="reg-pin-field" hidden>
+          <label for="reg-pin">KRA PIN</label>
+          <input type="text" id="reg-pin" placeholder="e.g. P051234567X" />
+        </div>
+
+        <div id="register-error" class="form-error" hidden></div>
+        <div id="register-success" class="form-success" hidden></div>
+
+        <button type="submit" class="btn btn--primary" id="register-submit" style="width:100%; justify-content:center; padding:11px;">
+          Create account
+        </button>
+      </form>
+
+      <p class="form-note">Staff accounts are normally provisioned by Registry. Self-registration here is provided for demonstration purposes.</p>
+    </div>
+  </main>
+
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

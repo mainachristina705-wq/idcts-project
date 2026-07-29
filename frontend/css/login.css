@@ -1,0 +1,195 @@
+.auth-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+}
+
+@media (max-width: 860px) {
+  .auth-shell { grid-template-columns: 1fr; }
+  .auth-signature { display: none; }
+}
+
+/* ---------- Signature panel: black-to-red gradient, white file-tab accents ---------- */
+.auth-signature {
+  background:
+    radial-gradient(130% 150% at 12% 0%, #b0142a 0%, #7a0e1f 38%, #141312 100%);
+  position: relative;
+  padding: 56px 56px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.sig-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.85;
+  margin-bottom: 18px;
+}
+
+.sig-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.12;
+  margin: 0 0 16px;
+  max-width: 460px;
+  color: #ffffff;
+}
+
+.sig-sub {
+  font-size: 15px;
+  color: #f2dcdf;
+  max-width: 360px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.sig-footer {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: #f0c9ce;
+  border-top: 1px solid rgba(255,255,255,0.22);
+  padding-top: 16px;
+}
+
+/* Fanned file-tab stack */
+.file-stack {
+  position: relative;
+  height: 210px;
+  margin: 20px 0 12px -6px;
+}
+
+.file-tab {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 168px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 8px 8px 0 0;
+  padding: 10px 16px;
+  transform-origin: bottom left;
+}
+
+.file-tab span {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.85);
+}
+
+.file-tab--1 { transform: rotate(-14deg) translateX(4px); height: 130px; background: rgba(20,19,18,0.28); }
+.file-tab--2 { transform: rotate(-7deg) translateX(2px); height: 145px; }
+.file-tab--3 { transform: rotate(-1deg); height: 158px; }
+.file-tab--4 { transform: rotate(6deg); height: 148px; background: rgba(20,19,18,0.28); }
+.file-tab--5 {
+  transform: rotate(13deg) translateX(-2px);
+  height: 132px;
+  background: #ffffff;
+  border-color: #ffffff;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 14px;
+}
+
+.stamp-inline {
+  display: inline-flex;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--red-dark);
+  border: 1.5px solid var(--red-dark);
+  border-radius: 999px;
+  padding: 3px 9px;
+  transform: rotate(-3deg);
+}
+
+/* ---------- Form panel ---------- */
+.auth-form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background: var(--paper);
+}
+
+.auth-form-wrap {
+  width: 100%;
+  max-width: 380px;
+}
+
+.form-mark {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--red);
+  margin-bottom: 22px;
+}
+
+.form-heading {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+
+.form-subheading {
+  font-size: 13.5px;
+  color: var(--slate);
+  margin: 0 0 26px;
+}
+
+.form-error {
+  background: var(--red-tint);
+  color: var(--red-dark);
+  font-size: 13px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 14px;
+  border: 1px solid var(--red-tint-strong);
+}
+
+.form-success {
+  background: var(--ink);
+  color: #ffffff;
+  font-size: 13px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 14px;
+}
+
+.form-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 26px 0 16px;
+  color: var(--slate-dim);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.form-divider::before, .form-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+#register-form { margin-top: 20px; }
+
+.form-note {
+  font-size: 12px;
+  color: var(--slate-dim);
+  line-height: 1.5;
+  margin-top: 22px;
+}
